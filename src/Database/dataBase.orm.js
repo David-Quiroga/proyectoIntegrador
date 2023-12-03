@@ -8,7 +8,21 @@ const sequelize = new Sequelize(MYSQLDATABASE, MYSQLUSER, MYSQLPASSWORD, {
 	dialect: 'mysql'
 });
 
-//const sequelize = new Sequelize(MYSQL_URI);
+// const sequelize = new Sequelize(
+// 	'facturacion',
+// 	'root',
+// 	'',
+// 	{
+// 	  host: 'localhost',
+// 	  dialect: 'mysql',
+// 	  pool: {
+// 		max: 5,
+// 		min: 0,
+// 		require: 30000,
+// 		idle: 10000
+// 	  }
+// 	}
+//   )
 
 sequelize.authenticate()
 	.then(() => {
@@ -23,8 +37,55 @@ sequelize.sync({ force: false })
 		console.log("tablas sincronizadas");
 	});
 
-//sincronia
-
-module.exports = {
+	const tiendaModel = require('../models/tienda') 
+	const dueñoModel = require('../models/dueño') 
+	const facturaModel = require('../models/factura') 
+	const formaPagoModel = require('../models/forma_pago') 
+	const clienteModel = require('../models/cliente'); 
+	const detalleFacturaModel = require("../models/detalle_factura");
+	const detalleTotalModel = require("../models/detalle_total");
 	
-};
+	//sincronia
+	
+	const tienda =  tiendaModel(sequelize, Sequelize)
+	const dueño = dueñoModel(sequelize, Sequelize)
+	const factura = facturaModel(sequelize, Sequelize)
+	const forma_pago = formaPagoModel(sequelize, Sequelize)
+	const cliente = clienteModel(sequelize, Sequelize)
+	const detalle_factura = detalleFacturaModel(sequelize, Sequelize)
+	const detalle_total = detalleTotalModel(sequelize, Sequelize)
+	
+	
+	//relacion tienda-dueño
+	dueño.hasMany(tienda)
+	tienda.belongsTo(dueño)
+	
+	//relacion tienda-factura
+	tienda.hasMany(factura)
+	factura.belongsTo(tienda)
+	
+	//relacion factura-cliente
+	cliente.hasMany(factura)
+	factura.belongsTo(cliente)
+	
+	//relacion factura-forma_pago
+	forma_pago.hasMany(factura)
+	factura.belongsTo(forma_pago)
+	
+	//relacion factura-detalle_factura
+	detalle_factura.hasMany(factura)
+	factura.belongsTo(detalle_factura)
+	
+	//relacion factura-detalle_total
+	detalle_total.hasMany(factura)
+	factura.belongsTo(detalle_total)
+	
+	module.exports = {
+		dueño,
+		tienda,
+		factura,
+		forma_pago,
+		cliente,
+		detalle_factura,
+		detalle_total
+	};
