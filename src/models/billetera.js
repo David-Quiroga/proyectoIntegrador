@@ -1,19 +1,18 @@
-const forma_pago=(sequelize,type)=>{
-    return sequelize.define('forma_pagos',{
-        id_forma_pago:{
+const billetera = (sequelize,type)=>{
+    return sequelize.define('billeteras',{
+        idBilletera:{
             type:type.INTEGER,
             primaryKey:true,
             autoIncrement:true 
         },
-        efectivo: type.STRING(99),
-        tarjeta: type.STRING(99),
-
-        crearFormaPago:{
+        alias: type.STRING(99),
+        
+        crearBilletera:{
             type:'TIMESTAMP',
             defaultValue: type.literal('CURRENT_TIMESTAMP'),
             allowNull:false
         },
-        actualizarFormaPago:{
+        actualizarBilletera:{
             type:'TIMESTAMP',
             defaultValue: type.literal('CURRENT_TIMESTAMP'),
             allowNull:false
@@ -23,4 +22,4 @@ const forma_pago=(sequelize,type)=>{
     });
 
 }
-module.exports = forma_pago
+module.exports = billetera

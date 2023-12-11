@@ -1,17 +1,20 @@
-const factura=(sequelize,type)=>{
-    return sequelize.define('facturas',{
-        idFactura:{
+const datosPersonales=(sequelize,type)=>{
+    return sequelize.define('datos_personales',{
+        idDatosPersonales:{
             type:type.INTEGER,
             primaryKey:true,
             autoIncrement:true 
         },
-        fecha_emision: type.STRING,
-        crearFactura:{
+        titulo: type.STRING,
+        descripcion: type.STRING,
+        fecha: type.STRING,
+
+        crearDatosPersonales:{
             type:'TIMESTAMP',
             defaultValue: type.literal('CURRENT_TIMESTAMP'),
             allowNull:false
         },
-        actualizarFactura:{
+        actualizarDatosPersonales:{
             type:'TIMESTAMP',
             defaultValue: type.literal('CURRENT_TIMESTAMP'),
             allowNull:false
@@ -20,4 +23,4 @@ const factura=(sequelize,type)=>{
         timestamps:false,
     });
 }
-module.exports = factura
+module.exports = datosPersonales

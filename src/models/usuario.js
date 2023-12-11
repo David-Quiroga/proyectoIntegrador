@@ -1,23 +1,20 @@
-const dueño = (sequelize,type)=>{
-    return sequelize.define('dueños',{
-        idDueño:{
+const usuario = (sequelize,type)=>{
+    return sequelize.define('usuarios',{
+        idUsuario:{
             type:type.INTEGER,
             primaryKey:true,
             autoIncrement:true 
         },
-        nombres_Dueño: type.STRING,
-        apellidos_Dueño:type.STRING,
-        cedula_Dueño:type.STRING,
-        celular_Dueño:type.STRING,
-        correo_electronico_Dueño:type.STRING,
-        password_Dueño: type.STRING,
+        nombre: type.STRING(99),
+        correo_electronico:type.STRING(99),
+        contraseña:type.STRING(99),
 
-        crearDueño:{
+        crearUsuario:{
             type:'TIMESTAMP',
             defaultValue: type.literal('CURRENT_TIMESTAMP'),
             allowNull:false
         },
-        actualizarDueño:{
+        actualizarUsuario:{
             type:'TIMESTAMP',
             defaultValue: type.literal('CURRENT_TIMESTAMP'),
             allowNull:false
@@ -28,4 +25,4 @@ const dueño = (sequelize,type)=>{
 
 }
 
-module.exports = dueño
+module.exports = usuario

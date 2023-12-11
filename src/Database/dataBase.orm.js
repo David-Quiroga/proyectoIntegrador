@@ -37,55 +37,32 @@ sequelize.sync({ force: false })
 		console.log("tablas sincronizadas");
 	});
 
-	const tiendaModel = require('../models/tienda') 
-	const dueñoModel = require('../models/dueño') 
-	const facturaModel = require('../models/factura') 
-	const formaPagoModel = require('../models/forma_pago') 
-	const clienteModel = require('../models/cliente'); 
-	const detalleFacturaModel = require("../models/detalle_factura");
-	const detalleTotalModel = require("../models/detalle_total");
+	const usuarioModel = require('../models/usuario')
+	const billeteraModel = require('../models/billetera')
+	const datosPersonalesModel = require('../models/datos_personales')
+	const datosBancariosModel = require('../models/datos_bancarios')
 	
-	//sincronia
+	//! sincronia
 	
-	const tienda =  tiendaModel(sequelize, Sequelize)
-	const dueño = dueñoModel(sequelize, Sequelize)
-	const factura = facturaModel(sequelize, Sequelize)
-	const forma_pago = formaPagoModel(sequelize, Sequelize)
-	const cliente = clienteModel(sequelize, Sequelize)
-	const detalle_factura = detalleFacturaModel(sequelize, Sequelize)
-	const detalle_total = detalleTotalModel(sequelize, Sequelize)
+	const usuario = usuarioModel(sequelize, Sequelize)
+	const billetera = billeteraModel(sequelize, Sequelize)
+	const datosPersonales = datosPersonalesModel(sequelize, Sequelize)
+	const datosBancarios = datosBancariosModel(sequelize, Sequelize)
 	
-	
-	//relacion tienda-dueño
-	dueño.hasMany(tienda)
-	tienda.belongsTo(dueño)
+	//relacion usuario-billetera
+	usuario.hasMany(billetera)
+	billetera.belongsTo(usuario)
 	
 	//relacion tienda-factura
-	tienda.hasMany(factura)
-	factura.belongsTo(tienda)
+	billetera.hasMany(datosBancarios)
+	datosBancarios.belongsTo(billetera)
 	
 	//relacion factura-cliente
-	cliente.hasMany(factura)
-	factura.belongsTo(cliente)
-	
-	//relacion factura-forma_pago
-	forma_pago.hasMany(factura)
-	factura.belongsTo(forma_pago)
-	
-	//relacion factura-detalle_factura
-	detalle_factura.hasMany(factura)
-	factura.belongsTo(detalle_factura)
-	
-	//relacion factura-detalle_total
-	detalle_total.hasMany(factura)
-	factura.belongsTo(detalle_total)
-	
+	billetera.hasMany(datosPersonales)
+	datosPersonales.belongsTo(billetera)
 	module.exports = {
-		dueño,
-		tienda,
-		factura,
-		forma_pago,
-		cliente,
-		detalle_factura,
-		detalle_total
+		usuario,
+		billetera,
+		datosBancarios,
+		datosPersonales
 	};

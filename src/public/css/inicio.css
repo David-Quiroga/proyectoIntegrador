@@ -1,24 +1,147 @@
-body {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    min-height: 100vh;
-    background-image: url(/img/bg.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-}
 nav {
     height: 80px;
-    background: #2a3e66;
+    background: #ADDFAD;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0px 50px 0px 100px;
 }
 a {
+    position: relative;
+    top: 8px;
     text-decoration: none;
+    color: #000;
+}
+p{
+    color: #000;
+    font-size: 26px;
+    font-style: normal;
+    font-family: Inter;
+    font-weight: 400;
+    line-height: normal;
+    position: fixed;
+    left: 200px;
+    top: 25px;
+}
+div li{
+    list-style: none;
+    position:fixed;
+    top: 150px;
+    left: 70px;
+    font-size: 20px;
+}
+.texto2{
+    color:#c36f29;
+    position: fixed;
+    top: 150px;
+    left: 120px;
+}
+.texto{
+    text-decoration: none;
+}
+.persona{
+    position: fixed;
+    top: 120px;
+    left: 1200px;
+    width: 220px ;
+    height: 267px;
+}
+.btn{
+    border-radius: 5px;
+    border: 2px solid #C36F29;
+    background: linear-gradient(0deg, #69C 0%, #69C 100%), #D9D9D9;
+    position: fixed;
+    top: 200px;
+    left: 70px;
+    width: 200px;
+    height: 60px;
+}
+.container {
+    position: fixed;
+    top: 430px;
+    max-width: 100%;
+    height: 360px;
+    background: #C2F1C1;
+}
+.titulo{
+    position: fixed;
+    top: 450px;
+    left: 540px;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.box{
+    position: fixed;
+    top: 510px;
+    left: 100px;
+    border-radius: 10px;
+    border: 1px solid #C36F29;
+    background: #FFF;
+    width: 360px;
+    height: 237px;
+}
+.box2{
+    position: fixed;
+    top: 510px;
+    left: 600px;
+    border-radius: 10px;
+    border: 1px solid #C36F29;
+    background: #FFF;
+    width: 360px;
+    height: 237px;
+}
+.box3{
+    position: fixed;
+    top: 510px;
+    left:1100px;
+    border-radius: 10px;
+    border: 1px solid #C36F29;
+    background: #FFF;
+    width: 360px;
+    height: 237px;
+}
+.title{
+    position: relative;
+    top: 150px;
+    left: 50px;
+    display: flex;
+    width: 245px;
+    height: 78px;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.title2{
+    position: relative;
+    top: 150px;
+    left: 50px;
+    display: flex;
+    width: 245px;
+    height: 78px;
+    flex-direction: column;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.titulo2{
+    position: relative;
+    top: 60px;
+    left: 70px;
+    display: flex;
+    width: 245px;
+    height: 78px;
 }
 nav ul {
     display:  flex;
@@ -27,9 +150,8 @@ nav ul {
 nav ul li{
     margin: 0 5px;
 }
-
 nav ul li a{
-    color: #fff;
+    color: #000;
     text-decoration: none;
     font-size: 18px;
     font-weight: 500;
@@ -49,41 +171,4 @@ nav #menu-btn i{
     font-size: 22px;
     cursor: pointer;
     display: none;
-}
-#click{
-    display: none;
-}
-@media (max-width: 940px){
-    nav #menu-btn i{
-        display: block;
-    }
-    #click:checked ~ #menu-btn i:before{
-        content: "\f00d";
-    }
-    nav ul {
-        position: fixed;
-        top: 80px;
-        left: -100%;
-        background: #2a3e66;
-        height: 100vh;
-        width: 100%;
-        display: block;
-        text-align: center;
-        transition: all 0.3s ease;
-    }
-    #click:checked ~ ul{
-        left: 0%;
-    }
-    nav ul li{
-        margin: 40px 0;
-    }
-    nav ul li a{
-        font-size: 20px;
-        display: block;
-    }
-    nav ul li a:hover,
-    nav ul li a:active{
-    color: black;
-    background: none;
-}
 }
