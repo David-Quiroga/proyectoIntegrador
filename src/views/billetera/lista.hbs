@@ -1,0 +1,41 @@
+<link rel="stylesheet" href="/css/formulario.css">
+
+<body>
+        {{#each lista}}
+    <form action="/billetera/lista/{{idUsuarios}}" method="post" class="container">
+        <p class="titulo">
+            Crea tu Billetera
+        </p>
+        <p class="subtitulo">
+            Crea una billetera para mantener datos seguros
+        </p>
+        <div>
+            <label class="nombre">Nombre de la Billetera</label>
+            <input class="input-nombre"  name="alias" type="text" placeholder="Ingresa tu correo" required>{{alias}}
+        </div>
+        <div>
+            <label class="contraseña">Propietaro</label>
+            <input class="input-contraseña"  name="propietario" type="text" placeholder="Ingresa tu contraseña" required>{{propietario}}
+        </div>
+        <button class="btn" type="submit">Crear</button>
+    </form>
+    {{/each}}
+        <p class="titulo">
+            Crea tu Billetera
+        </p>
+        <p class="subtitulo">
+            Crea una billetera para mantener datos seguros
+        </p>
+        <div>
+            <label class="nombre">Nombre de la Billetera</label>
+            <input class="input-nombre"  name="alias" type="text" placeholder="Ingresa tu correo" required>{{alias}}
+        </div>
+        <div>
+            <label class="contraseña">Propietaro</label>
+            <input class="input-contraseña"  name="propietario" type="text" placeholder="Ingresa tu contraseña" required>{{propietario}}
+        </div>
+        <button class="btn" type="submit">Crear</button>
+    </form>
+    {{/each}}
+    <a href="/principal" class="regresar">Regresar</a>
+</body>

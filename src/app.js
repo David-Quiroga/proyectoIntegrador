@@ -83,6 +83,6 @@ app.use(require('./router/index.rutas'))
 app.use(require("./router/registro.rutas"))
 app.use(require('./router/principal.rutas'))
 app.use(require('./router/capacitacion.rutas'))
-app.use(require('./router/formulario.rutas'))
+app.use(require('./router/billetera.rutas'))
 
 module.exports = app;

@@ -1,7 +1,8 @@
 <link rel="stylesheet" href="/css/formulario.css">
 
 <body>
-    <form action="" method="" class="container">
+    <form action="/billetera/agregar/{{user.idUsuario}}" method="post" class="container">
+    
         <p class="titulo">
             Crea tu Billetera
         </p>
@@ -13,10 +14,10 @@
             <input class="input-nombre"  name="alias" type="text" placeholder="Ingresa tu correo" required>
         </div>
         <div>
-            <label class="contraseña">Propietario</label>
-            <input class="input-contraseña" name="propietario" type="password" placeholder="Ingresa tu contraseña" required>
+            <label class="contraseña">Propietaro</label>
+            <input class="input-contraseña"  name="propietario" type="text" placeholder="Ingresa tu contraseña" required>
         </div>
-        <button class="btn">Crear</button>
+        <button class="btn" type="submit">Crear</button>
     </form>
     <a href="/principal" class="regresar">Regresar</a>
 </body>
