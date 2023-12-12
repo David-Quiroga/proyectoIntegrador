@@ -1,3 +1,5 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
 body {
     margin: 0;
     padding: 0;
@@ -20,7 +22,6 @@ body {
     left: 670px;
     color: #000;
     text-align: center;
-    font-family: Roboto;
     font-size: 33px;
     font-style: normal;
     font-weight: 500;
@@ -29,10 +30,9 @@ body {
 .subtitulo{
     position: fixed;
     top: 150px;
-    left: 550px;
+    left: 520px;
     color: #000;
     text-align: center;
-    font-family: Roboto;
     font-size: 29px;
     font-style: normal;
     font-weight: 400;
@@ -44,7 +44,6 @@ body {
     left: 540px;
     color: #000;
     text-align: center;
-    font-family: Roboto;
     font-size: 20px;
     font-style: normal;
     font-weight: 600;
@@ -68,7 +67,6 @@ body {
     left: 540px;
     color: #000;
     text-align: center;
-    font-family: Roboto;
     font-size: 20px;
     font-style: normal;
     font-weight: 600;
@@ -100,7 +98,6 @@ body {
     top: 510px;
     left: 690px;
     color: #FFF;
-    font-family: Roboto;
     font-size: 32px;
     font-style: normal;
     line-height: normal;
@@ -109,7 +106,6 @@ body {
     position: fixed;
     top: 700px;
     left: 100px;
-    font-family: Inter;
     font-size: 25px;
     font-style: normal;
     font-weight: 400;

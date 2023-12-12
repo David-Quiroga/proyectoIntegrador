@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
 *{
     margin: 0;
     padding: 0;
@@ -6,7 +7,7 @@
 .titulo{
     position: fixed;
     top: 90px;
-    right: 1013px;
+    right: 1018px;
     color: #8A9A5B;
     font-family: Roboto;
     font-size: 28px;
@@ -17,7 +18,7 @@
 .contenido{
     position: fixed;
     top: 120px;
-    right: 850px;
+    right: 890px;
     display: flex;
     width: 479px;
     height: 91px;
