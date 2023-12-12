@@ -1,1 +1,18 @@
-<h1>LOGIN</h1>
+<link rel="stylesheet" href="/css/login.css">
+
+<body>
+    <form action="/login" method="POST" class="container">
+        <p class="titulo">Iniciar Sesion</p>
+        <p class="subtitulo">Inicia sesion con tu correo y contraseña</p>
+        <div>
+            <label class="nombre">Correo Electronico</label>
+            <input class="input-nombre" name="correo_electronico" type="text" placeholder="Ingresa tu correo" required>
+        </div>
+        <div>
+            <label class="contraseña">Contraseña</label>
+            <input class="input-contraseña" name="contraseña" type="password" placeholder="Ingresa tu contraseña" required>
+        </div>
+        <button class="btn" type="submit">Iniciar Sesion</button>
+    </form>
+    <a class="regresar" href="/">Regresar</a>
+</body>

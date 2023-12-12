@@ -5,9 +5,9 @@ const usuario = (sequelize,type)=>{
             primaryKey:true,
             autoIncrement:true 
         },
-        nombre: type.STRING(99),
-        correo_electronico:type.STRING(99),
-        contraseña:type.STRING(99),
+        nombre: type.STRING,
+        correo_electronico:type.STRING,
+        contraseña:type.STRING,
 
         crearUsuario:{
             type:'TIMESTAMP',

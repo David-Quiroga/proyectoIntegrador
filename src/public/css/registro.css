@@ -1,0 +1,163 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.titulo{
+    position: fixed;
+    top: 90px;
+    right: 1013px;
+    color: #8A9A5B;
+    font-family: Roboto;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.contenido{
+    position: fixed;
+    top: 120px;
+    right: 850px;
+    display: flex;
+    width: 479px;
+    height: 91px;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    color: #000;
+    font-family: Roboto;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.container2 {
+    position: fixed;
+    top: -170px;
+    left: 723px;
+    width: 100%;
+    max-width: 669px; /* Opcional: Establecer un ancho máximo */
+    height: 1000px;
+    background: #C2F1C1;
+    margin-left: 10%; /* Ajusta según sea necesario */
+    margin-right: 10%;
+}
+.title-container{
+    position: fixed;
+    top: 130px;
+    left: 1009px;
+    color: #000;    
+    text-align: center;
+    font-family: Roboto;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    width: 472px;
+}
+.nombre{
+    position: fixed;
+    top: 240px;
+    left: 950px;
+    color: #000;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.input-nombre{
+    position: fixed;
+    top: 270px;
+    left: 950px;
+    width: 522px;
+    height: 51px;
+    padding-left: 15px;
+    border-radius: 5px;
+    text-align:left;
+    border: 1px solid #000;
+    background: #FFF;
+}
+.correo{
+    position: fixed;
+    top: 350px;
+    left: 950px;
+    color: #000;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.input-correo{
+    position: fixed;
+    top: 380px;
+    left: 950px;
+    width: 522px;
+    height: 51px;
+    padding-left: 15px;
+    border-radius: 5px;
+    text-align:left;
+    border: 1px solid #000;
+    background: #FFF;
+}
+.contraseña{
+    position: fixed;
+    top: 456px;
+    left: 950px;
+    color: #000;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.input-contraseña{
+    position: fixed;
+    top: 490px;
+    left: 950px;
+    width: 522px;
+    height: 51px;
+    padding-left: 15px;
+    border-radius: 5px;
+    text-align:left;
+    border: 1px solid #000;
+    background: #FFF;
+}
+.btn{
+    position: fixed;
+    top: 600px;
+    left: 1100px;
+    height: 55px;
+    width: 293px;
+    border-radius: 5px;
+    background: #DBAB5F;
+}
+.btn p{
+    position: fixed;
+    top: 610px;
+    left: 1180px;
+    color: #FFF;
+    font-family: Roboto;
+    font-size: 32px;
+    font-style: normal;
+    line-height: normal;
+}
+.regresar{
+    position: fixed;
+    top: 700px;
+    left: 100px;
+    font-family: Inter;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: #000;
+}
+a:hover{
+    text-decoration: none;
+    color: #000;
+}

@@ -13,17 +13,17 @@ passport.use(
 	"local.signin",
 	new LocalStrategy(
 		{
-			usernameField: "correo_electronico_Dueño",
-			passwordField: "password_Dueño",
+			usernameField: "correo_electronico",
+			passwordField: "contraseña",
 			passReqToCallback: true,
 		},
-		async (req, correo_electronico_Dueño, password_Dueño, done) => {
-			const rows = await orm.dueño.findOne({ where: { correo_electronico_Dueño: correo_electronico_Dueño } });
+		async (req, correo_electronico, contraseña, done) => {
+			const rows = await orm.usuario.findOne({ where: { correo_electronico: correo_electronico } });
 			if (rows) {
 				const user = rows;
 				const validPassword = await helpers.matchPassword(
-					password_Dueño,
-					user.password_Dueño
+					contraseña,
+					user.contraseña
 				)
 				if (validPassword) {
 					done(
@@ -31,7 +31,7 @@ passport.use(
 						user,
 						req.flash(
 							"message",
-							"Bienvenido" + " " + user.correo_electronico_Dueño
+							"Bienvenido" + " " + user.nombre
 						)
 					);
 				} else {
@@ -52,43 +52,24 @@ passport.use(
 	"local.signup",
 	new LocalStrategy(
 		{
-			usernameField: "correo_electronico_Dueño",
-			passwordField: "password_Dueño",
+			usernameField: "correo_electronico",
+			passwordField: "contraseña",
 			passReqToCallback: true,
 		},
-		async (req, correo_electronico_Dueño, password_Dueño, done) => {
-			const usuarios = await orm.dueño.findOne({ where: { correo_electronico_Dueño: correo_electronico_Dueño }});
+		async (req, correo_electronico, contraseña, done) => {
+			const usuarios = await orm.usuario.findOne({ where: { correo_electronico: correo_electronico } });
 			if (usuarios === null) {
-				const { nombres_Dueño, apellidos_Dueño, cedula_Dueño, celular_Dueño, correo_electronico_Dueño, password_Dueño } = req.body;
-				let nuevoDueño = {
-					nombres_Dueño,
-					apellidos_Dueño,
-					cedula_Dueño,
-					celular_Dueño,
-					correo_electronico_Dueño,
-					password_Dueño
+				const { nombre, correo_electronico } = req.body;
+				let nuevoUsuario = {
+					nombre,
+					correo_electronico,
+					contraseña
 				};
-				nuevoDueño.password_Dueño = await helpers.encryptPassword(password_Dueño);
-				const resultado = await orm.dueño.create(nuevoDueño);
-				nuevoDueño.id = resultado.insertId;
-				return done(null, nuevoDueño)
+				nuevoUsuario.contraseña = await helpers.encryptPassword(contraseña);
+				const resultado = await orm.usuario.create(nuevoUsuario);
+				nuevoUsuario.id = resultado.insertId;
+				return done(null, nuevoUsuario)
 				
-			} else {
-				if (usuarios) {
-					const usuario = usuarios;
-					if (username == usuario.nombres_Dueño) {
-						done(null, false, req.flash("message", "El nombre de usuario ya existe."));
-					} else {
-						let nuevoDueño = {
-							correo_electronico_Dueño,
-							password_Dueño
-						};
-						nuevoDueño.password_Dueño = await helpers.encryptPassword(password_Dueño);
-						const resultado = await orm.dueño.create(nuevoDueño);
-						nuevoDueño.id = resultado.insertId;
-						return done(null, nuevoDueño);
-					}
-				}
 			}
 		}
 	)

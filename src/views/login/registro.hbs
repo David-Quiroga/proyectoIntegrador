@@ -1,1 +1,24 @@
-<H1>REGISTRO</H1>
+<link rel="stylesheet" href="/css/registro.css">
+
+<body>
+    <form action="/registro" method="POST" class="container2">
+        <p class="titulo">Abre tu cuenta con nosotros</p>
+        <p class="contenido">Manten en un solo lugar tus ideas y toda tu informacion bancaria</p>
+        <img src="" alt="">
+        <p class="title-container">Empieza a disfrutar de SecurityVault abriedo una cuenta.</p>
+        <div>
+            <label class="nombre">Nombre del Usuario</label>
+            <input class="input-nombre" name="nombre" type="text" placeholder="Ingresa tu nombre de usuario" required>
+        </div>
+        <div>
+            <label class="correo">Correo Electronico</label>
+            <input class="input-correo" name="correo_electronico" type="email" placeholder="Ingresa tu correo electronico" required>
+        </div>
+        <div>
+            <label class="contraseña">Contraseña</label>
+            <input class="input-contraseña" name="contraseña" type="password" placeholder="Ingresa tu contraseña" required>
+        </div>
+        <button class="btn" type="submit">Registrarse</button>
+    </form>
+    <a class="regresar" href="/">Regresar</a>
+</body>

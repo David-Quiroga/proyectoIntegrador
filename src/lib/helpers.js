@@ -2,14 +2,14 @@ const bcrypt = require('bcryptjs');
 
 const helpers = {}
 
-helpers.encryptPassword = async (password_Dueño) =>{
+helpers.encryptPassword = async (contraseña) =>{
     const salt = await bcrypt.genSalt(10);
-    const hash = await bcrypt.hash(password_Dueño, salt);
+    const hash = await bcrypt.hash(contraseña, salt);
     return hash;
 }
-helpers.matchPassword = async (password_Dueño, savedPassword) => {
+helpers.matchPassword = async (contraseña, savedPassword) => {
     try {
-        return await bcrypt.compare(password_Dueño, savedPassword);
+        return await bcrypt.compare(contraseña, savedPassword);
     } catch (e) {
         console.log(e)
     }
