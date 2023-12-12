@@ -5,8 +5,9 @@ const billetera = (sequelize,type)=>{
             primaryKey:true,
             autoIncrement:true 
         },
-        alias: type.STRING(99),
-        
+        alias: type.STRING,
+        propietario: type.STRING,
+
         crearBilletera:{
             type:'TIMESTAMP',
             defaultValue: type.literal('CURRENT_TIMESTAMP'),
