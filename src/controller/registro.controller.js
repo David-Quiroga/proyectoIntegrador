@@ -23,4 +23,9 @@ registro.Login = passport.authenticate('local.signin', {
     failureFlash: true
 });
 
+registro.cierreSesion = (req, res, next) => {
+    req.logOut();
+    res.redirect('/login');
+};
+
 module.exports = registro;
