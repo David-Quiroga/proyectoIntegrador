@@ -8,8 +8,8 @@ const flash = require('connect-flash');
 const MySQLStore = require('express-mysql-session')(session);
 const bodyparser = require('body-parser');
 const fileUpload = require("express-fileupload");
-const multer = require('multer');
-const fs = require('fs');
+const mysql = require('mysql')
+const myconnection = require('express-myconnection')
 
 const { MYSQLHOST, MYSQLUSER, MYSQLPASSWORD, MYSQLDATABASE, MYSQLPORT } = require("./keys");
 
@@ -24,6 +24,14 @@ const options = {
     database: MYSQLDATABASE,
     createDatabaseTable: true
 };
+
+app.use(myconnection(mysql, {
+    host: 'localhost',
+    user: 'root',
+    password: '',
+    port: 3306,
+    database: 'proyecto'
+}))
 
 const sessionStore = new MySQLStore(options);
 
@@ -47,7 +55,7 @@ app.set('view engine', '.hbs');
 //midlewars
 app.use(fileUpload({
     createParentPath: true, // Crea los directorios necesarios para almacenar los archivos si no existen
-  }));
+}));
 app.use(morgan('dev'));
 app.use(bodyparser.urlencoded({
     extended: false
@@ -83,6 +91,13 @@ app.use(require('./router/index.rutas'))
 app.use(require("./router/registro.rutas"))
 app.use(require('./router/principal.rutas'))
 app.use(require('./router/capacitacion.rutas'))
-app.use(require('./router/billetera.rutas'))
+app.use('/billetera',require('./router/billetera.rutas'))
+
+app.get('/add', (req, res) => {
+    res.render('formulario/add');
+})
+app.get('/datos', (req, res) => {
+    res.render('formulario/datos');
+})
 
 module.exports = app;

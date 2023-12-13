@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: linear-gradient(199deg, #BCEDCF 41.02%, rgba(0, 191, 255, 0.35) 151.47%);
+}
+.container{
+    position: fixed;
+    top: 566px;
+    max-width: 100%;
+    height: 225px;
+    background: #C2F1C1;
+}
+.texto{
+    position: fixed;
+    top: 596px;
+    display: flex;
+    max-width: 100%;
+    flex-direction: column;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+.more{
+    position: fixed;
+    top: 680px;
+    cursor: pointer;
+}
+nav {
+    height: 80px;
+    background: #ADDFAD;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 50px 0px 100px;
+}
+nav ul {
+    display:  flex;
+    list-style: none;
+}
+nav ul li{
+    margin: 0 5px;
+}
+nav ul li a{
+    color: #000;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    padding: 8px 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+a:hover{
+    text-decoration: none;
+    color: #000;
+}
+nav ul li a:hover,
+nav ul li a:active{
+    color: #1b1b1b;
+    background: #fff;
+    text-decoration: none;
+}
+nav #menu-btn i{
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+    display: none;
+}
+.contenedor{
+    position: fixed;
+    top: 150px;
+    left: 600px;
+    width: 401px;
+    height: 300px;
+    flex-shrink: 0;
+    border-radius: 5px;
+    border: 1px solid #000;
+    background: #98E5E7;
+    box-shadow: 0px 4px 12px 0px #000;
+}
+.img{
+    position: fixed;
+    top: 170px;
+    left: 900px;
+    width: 70px;
+    height: 70px;
+}
+.alias{
+    position: fixed;
+    top: 200px;
+    left: 640px;
+    color: #000;
+    text-align: center;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.propietario{
+    position: fixed;
+    top: 260px;
+    left: 640px;
+    color: #000;
+    text-align: center;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.btn{
+    position: fixed;
+    top: 360px;
+    left: 630px;
+    width: 148px;
+    height: 39px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    border: 2px solid #000;
+    background: linear-gradient(260deg, rgba(30, 216, 37, 0.35) 30.86%, rgba(0, 191, 255, 0.41) 106.95%);
+}
+.btn2{
+    position: fixed;
+    top: 360px;
+    left: 800px;
+    width: 148px;
+    height: 39px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    border: 2px solid #000;
+    background: linear-gradient(260deg, rgba(30, 216, 37, 0.35) 30.86%, rgba(0, 191, 255, 0.41) 106.95%);
+}

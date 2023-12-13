@@ -1,8 +1,9 @@
 const express = require("express");
 const rutas = express.Router()
 
-const { mostrar} = require('../controller/principal.controller')
+const { mostrar, Mostrar} = require('../controller/principal.controller')
 
 rutas.get('/principal', mostrar)
+rutas.get('/agregar', Mostrar)
 
 module.exports = rutas

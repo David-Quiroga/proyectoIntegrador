@@ -70,6 +70,22 @@ passport.use(
 				nuevoUsuario.id = resultado.insertId;
 				return done(null, nuevoUsuario)
 				
+			} else {
+				if(usuarios) {
+					const usuario = usuarios;
+					if(nombre == usuario.nombre){
+						done(null, false, req.flash("message", "El nombre de usuario ya existe."));
+					} else {
+						let nuevoUsuario = {
+							correo_electronico,
+							contraseña
+						};
+						nuevoUsuario.contraseña = await helpers.encryptPassword(contraseña);
+						const resultado = await orm.usuario.create(nuevoUsuario);
+						nuevoUsuario.id = resultado.insertId;
+						return done(null, nuevoUsuario)
+					}
+				}
 			}
 		}
 	)
